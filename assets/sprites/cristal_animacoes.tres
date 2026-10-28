@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://c67x60ucyvoiu"]
+
+[ext_resource type="Texture2D" uid="uid://cqodd4c4phvoq" path="res://assets/sprites/cristal.png" id="1_ydmfa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhmvv"]
+atlas = ExtResource("1_ydmfa")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87dv3"]
+atlas = ExtResource("1_ydmfa")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o27gd"]
+atlas = ExtResource("1_ydmfa")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mkmc"]
+atlas = ExtResource("1_ydmfa")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl39z"]
+atlas = ExtResource("1_ydmfa")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh5hj"]
+atlas = ExtResource("1_ydmfa")
+region = Rect2(80, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_vhmvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87dv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o27gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mkmc")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_pl39z")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh5hj")
+}],
+"loop": true,
+"name": &"brilhar",
+"speed": 8.0
+}]

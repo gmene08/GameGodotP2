@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://c5cm5uqr4yby4"]
+
+[ext_resource type="Texture2D" uid="uid://csbj4hautkarn" path="res://assets/sprites/brilho.png" id="1_x4ze6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdree"]
+atlas = ExtResource("1_x4ze6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sso12"]
+atlas = ExtResource("1_x4ze6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0n2z"]
+atlas = ExtResource("1_x4ze6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuldv"]
+atlas = ExtResource("1_x4ze6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8in0"]
+atlas = ExtResource("1_x4ze6")
+region = Rect2(64, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdree")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sso12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0n2z")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuldv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8in0")
+}],
+"loop": false,
+"name": &"brilho",
+"speed": 15.0
+}]

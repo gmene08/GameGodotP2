@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dyplq27gabuco"]
+
+[ext_resource type="Texture2D" uid="uid://cj5mxmrtq0c70" path="res://assets/sprites/morcego_pedra.png" id="1_5o9k3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkzsn"]
+atlas = ExtResource("1_5o9k3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3798w"]
+atlas = ExtResource("1_5o9k3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_zerh6"]
+atlas = ExtResource("1_5o9k3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyy96"]
+atlas = ExtResource("1_5o9k3")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkzsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3798w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_zerh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyy96")
+}],
+"loop": true,
+"name": &"voar",
+"speed": 10.0
+}]
