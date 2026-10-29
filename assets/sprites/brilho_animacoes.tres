@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://c5cm5uqr4yby4"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://c5cm5uqr4yby4"]
 
 [ext_resource type="Texture2D" uid="uid://csbj4hautkarn" path="res://assets/sprites/brilho.png" id="1_x4ze6"]
 
@@ -40,7 +40,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s8in0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"brilho",
 "speed": 15.0
 }]
