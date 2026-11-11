@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://cju6whhhchi2p"]
 
+[ext_resource type="Script" uid="uid://syee66kdrve7" path="res://entities/player.gd" id="1_jogador"]
 [ext_resource type="SpriteFrames" uid="uid://cbhcinadyquyw" path="res://assets/sprites/minerador_animacoes.tres" id="1_merdl"]
+[ext_resource type="Script" uid="uid://bx4upwa5vhykl" path="res://entities/estados/maquina_estados.gd" id="2_maquina"]
+[ext_resource type="Script" uid="uid://3fvxr0vvule6" path="res://entities/estados/jogador/parado.gd" id="3_parado"]
+[ext_resource type="Script" uid="uid://dwk8honi31mbt" path="res://entities/estados/jogador/andando.gd" id="4_andando"]
+[ext_resource type="Script" uid="uid://dx4k7fgt6x24o" path="res://entities/estados/jogador/correndo.gd" id="5_correndo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1ctu"]
 size = Vector2(10, 14)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=270960006]
+[node name="Jogador" type="CharacterBody2D" unique_id=270960006]
+motion_mode = 1
+script = ExtResource("1_jogador")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=16357619]
 shape = SubResource("RectangleShape2D_s1ctu")
@@ -13,3 +20,16 @@ shape = SubResource("RectangleShape2D_s1ctu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1895904457]
 sprite_frames = ExtResource("1_merdl")
 animation = &"parado_baixo"
+
+[node name="MaquinaEstados" type="Node" parent="." node_paths=PackedStringArray("estado_inicial")]
+script = ExtResource("2_maquina")
+estado_inicial = NodePath("Parado")
+
+[node name="Parado" type="Node" parent="MaquinaEstados"]
+script = ExtResource("3_parado")
+
+[node name="Andando" type="Node" parent="MaquinaEstados"]
+script = ExtResource("4_andando")
+
+[node name="Correndo" type="Node" parent="MaquinaEstados"]
+script = ExtResource("5_correndo")
