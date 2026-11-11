@@ -2,6 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://7n3wdrfgehek" path="res://assets/tiles/caverna_tileset.tres" id="1_tyctc"]
 [ext_resource type="PackedScene" uid="uid://cju6whhhchi2p" path="res://entities/player.tscn" id="2_j552l"]
+[ext_resource type="Script" uid="uid://dayqlhmgm1cb8" path="res://entities/gerador_cristais.gd" id="9_gerador"]
+[ext_resource type="PackedScene" uid="uid://dma55wrgwfpc0" path="res://ui/hud.tscn" id="9_hud"]
 
 [node name="MapaCaverna" type="Node2D" unique_id=1451520069]
 
@@ -18,6 +20,7 @@ tile_map_data = PackedByteArray("AAA3AAUAAAAAABMAAAA4AAUAAAABABMAAAA3AAYAAAAAABQ
 tile_set = ExtResource("1_tyctc")
 
 [node name="PontosDeCristal" type="Node2D" parent="." unique_id=1826337428]
+script = ExtResource("9_gerador")
 
 [node name="Ponto01" type="Marker2D" parent="PontosDeCristal" unique_id=1556307901]
 position = Vector2(264, 104)
@@ -129,3 +132,5 @@ limit_top = 0
 limit_right = 1152
 limit_bottom = 704
 position_smoothing_enabled = true
+
+[node name="HUD" parent="." instance=ExtResource("9_hud")]

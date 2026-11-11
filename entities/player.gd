@@ -4,6 +4,8 @@ extends CharacterBody2D
 ## andando, correndo) fica nos estados filhos da MaquinaEstados; aqui fica só
 ## o que os estados têm em comum.
 
+signal cristais_mudou(total: int)
+
 const NOMES_DIRECAO: Dictionary[Vector2, String] = {
 	Vector2.UP: "cima",
 	Vector2.DOWN: "baixo",
@@ -19,6 +21,7 @@ const NOMES_DIRECAO: Dictionary[Vector2, String] = {
 
 ## Para onde o minerador está olhando; escolhe a animação (ex.: "andar_cima").
 var direcao := Vector2.DOWN
+var cristais := 0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -54,3 +57,9 @@ func atualizar_direcao(entrada: Vector2) -> void:
 ## Toca a animação da ação na direção atual: tocar_animacao("andar") -> "andar_cima".
 func tocar_animacao(acao: String, velocidade := 1.0) -> void:
 	sprite.play(acao + "_" + NOMES_DIRECAO[direcao], velocidade)
+
+
+## Chamado pelo cristal quando o jogador encosta nele.
+func coletar_cristal() -> void:
+	cristais += 1
+	cristais_mudou.emit(cristais)

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dma55wrgwfpc0"]
+
+[ext_resource type="Script" uid="uid://cbegvx5fbvwx0" path="res://ui/hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" uid="uid://cqodd4c4phvoq" path="res://assets/sprites/cristal.png" id="2_cristal"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icone"]
+atlas = ExtResource("2_cristal")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_quantidade"]
+font_size = 12
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="Cristais" type="HBoxContainer" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 21.0
+theme_override_constants/separation = 2
+
+[node name="Icone" type="TextureRect" parent="Cristais"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_icone")
+stretch_mode = 5
+
+[node name="Quantidade" type="Label" parent="Cristais"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_quantidade")
+vertical_alignment = 1

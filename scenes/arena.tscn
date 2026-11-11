@@ -2,6 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://dpm1ja3jdvad" path="res://assets/tiles/mina_tileset.tres" id="1_t7r0c"]
 [ext_resource type="PackedScene" uid="uid://cju6whhhchi2p" path="res://entities/player.tscn" id="1_wl4x5"]
+[ext_resource type="Script" uid="uid://dayqlhmgm1cb8" path="res://entities/gerador_cristais.gd" id="9_gerador"]
+[ext_resource type="PackedScene" uid="uid://dma55wrgwfpc0" path="res://ui/hud.tscn" id="9_hud"]
 
 [node name="Arena" type="Node2D" unique_id=2029993895]
 
@@ -32,6 +34,7 @@ tile_map_data = PackedByteArray("AAADAAIAAAAAAAUAAAALAAIAAAAFAAUAAAAMAAIAAAAGAAU
 tile_set = ExtResource("1_t7r0c")
 
 [node name="PontosDeCristal" type="Node2D" parent="." unique_id=714597986]
+script = ExtResource("9_gerador")
 
 [node name="Ponto01" type="Marker2D" parent="PontosDeCristal" unique_id=1986916286]
 position = Vector2(136, 56)
@@ -115,3 +118,5 @@ position = Vector2(160, 26)
 
 [node name="Tunel2" type="Marker2D" parent="SaidasMorcegos" unique_id=1047559711]
 position = Vector2(352, 26)
+
+[node name="HUD" parent="." instance=ExtResource("9_hud")]

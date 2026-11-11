@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cb0j3wc8e2sot"]
+
+[ext_resource type="Script" uid="uid://bdjhoxhjyc4ru" path="res://entities/cristal.gd" id="1_cristal"]
+[ext_resource type="SpriteFrames" uid="uid://c67x60ucyvoiu" path="res://assets/sprites/cristal_animacoes.tres" id="2_sprite"]
+[ext_resource type="SpriteFrames" uid="uid://c5cm5uqr4yby4" path="res://assets/sprites/brilho_animacoes.tres" id="3_brilho"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cristal"]
+radius = 6.0
+
+[node name="Cristal" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_cristal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cristal")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_sprite")
+animation = &"brilhar"
+autoplay = "brilhar"
+
+[node name="Brilho" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = ExtResource("3_brilho")
+animation = &"brilho"
