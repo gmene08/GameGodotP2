@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://c67x60ucyvoiu"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://c67x60ucyvoiu"]
 
 [ext_resource type="Texture2D" uid="uid://cqodd4c4phvoq" path="res://assets/sprites/cristal.png" id="1_ydmfa"]
 
@@ -47,7 +47,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dh5hj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"brilhar",
 "speed": 8.0
 }]

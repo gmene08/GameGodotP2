@@ -1,28 +1,12 @@
 [gd_resource type="Theme" format=3 uid="uid://bdjdm5ohtoji"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_painel"]
-content_margin_left = 14.0
-content_margin_top = 10.0
-content_margin_right = 14.0
-content_margin_bottom = 12.0
-bg_color = Color(0.106, 0.086, 0.145, 0.96)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.557, 0.486, 0.765, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botao"]
-content_margin_left = 10.0
-content_margin_top = 3.0
-content_margin_right = 10.0
-content_margin_bottom = 4.0
-bg_color = Color(0.165, 0.133, 0.22, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botao_foco"]
+draw_center = false
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.42, 0.353, 0.557, 1)
+border_color = Color(1, 0.86, 0.45, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botao_hover"]
 content_margin_left = 10.0
@@ -36,6 +20,18 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.725, 0.639, 0.89, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botao"]
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.165, 0.133, 0.22, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.42, 0.353, 0.557, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botao_pressionado"]
 content_margin_left = 10.0
 content_margin_top = 4.0
@@ -48,13 +44,17 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.725, 0.639, 0.89, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botao_foco"]
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 0.86, 0.45, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_painel"]
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 12.0
+bg_color = Color(0.106, 0.086, 0.145, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.557, 0.486, 0.765, 1)
 
 [resource]
 default_font_size = 12
