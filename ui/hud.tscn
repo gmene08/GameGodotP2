@@ -2,6 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cbegvx5fbvwx0" path="res://ui/hud.gd" id="1_hud"]
 [ext_resource type="Texture2D" uid="uid://cqodd4c4phvoq" path="res://assets/sprites/cristal.png" id="2_cristal"]
+[ext_resource type="Texture2D" uid="uid://dtwplc4y0evpr" path="res://assets/sprites/coracao.png" id="3_coracao"]
+[ext_resource type="Theme" uid="uid://bdjdm5ohtoji" path="res://ui/tema.tres" id="4_tema"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_coracao_cheio"]
+atlas = ExtResource("3_coracao")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_coracao_vazio"]
+atlas = ExtResource("3_coracao")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icone"]
 atlas = ExtResource("2_cristal")
@@ -12,14 +22,36 @@ font_size = 12
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_fase"]
+font_size = 16
+font_color = Color(1, 0.94, 0.75, 1)
+outline_size = 4
+outline_color = Color(0.1, 0.06, 0.12, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_titulo"]
+font_size = 20
+font_color = Color(1, 0.94, 0.75, 1)
+outline_size = 4
+outline_color = Color(0.1, 0.06, 0.12, 1)
+
 [node name="HUD" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_hud")
+coracao_cheio = SubResource("AtlasTexture_coracao_cheio")
+coracao_vazio = SubResource("AtlasTexture_coracao_vazio")
+
+[node name="Vida" type="HBoxContainer" parent="."]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 52.0
+offset_bottom = 19.0
+theme_override_constants/separation = 0
 
 [node name="Cristais" type="HBoxContainer" parent="."]
 offset_left = 4.0
-offset_top = 4.0
+offset_top = 20.0
 offset_right = 44.0
-offset_bottom = 21.0
+offset_bottom = 37.0
 theme_override_constants/separation = 2
 
 [node name="Icone" type="TextureRect" parent="Cristais"]
@@ -29,6 +61,86 @@ stretch_mode = 5
 
 [node name="Quantidade" type="Label" parent="Cristais"]
 layout_mode = 2
-text = "0"
+text = "0/0"
 label_settings = SubResource("LabelSettings_quantidade")
 vertical_alignment = 1
+
+[node name="Anuncio" type="VBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 56.0
+offset_bottom = 96.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="NomeFase" type="Label" parent="Anuncio"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_fase")
+horizontal_alignment = 1
+
+[node name="Objetivo" type="Label" parent="Anuncio"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_quantidade")
+horizontal_alignment = 1
+
+[node name="Tela" type="Control" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_tema")
+
+[node name="Fundo" type="ColorRect" parent="Tela"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.02, 0.05, 0.6)
+
+[node name="Centro" type="CenterContainer" parent="Tela"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Painel" type="PanelContainer" parent="Tela/Centro"]
+layout_mode = 2
+
+[node name="Conteudo" type="VBoxContainer" parent="Tela/Centro/Painel"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Titulo" type="Label" parent="Tela/Centro/Painel/Conteudo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pausado"
+label_settings = SubResource("LabelSettings_titulo")
+horizontal_alignment = 1
+
+[node name="Texto" type="Label" parent="Tela/Centro/Painel/Conteudo"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Botoes" type="HBoxContainer" parent="Tela/Centro/Painel/Conteudo"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BotaoPrincipal" type="Button" parent="Tela/Centro/Painel/Conteudo/Botoes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continuar"
+
+[node name="BotaoMenu" type="Button" parent="Tela/Centro/Painel/Conteudo/Botoes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Menu"

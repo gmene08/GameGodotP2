@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://3fvxr0vvule6" path="res://entities/estados/jogador/parado.gd" id="3_parado"]
 [ext_resource type="Script" uid="uid://dwk8honi31mbt" path="res://entities/estados/jogador/andando.gd" id="4_andando"]
 [ext_resource type="Script" uid="uid://dx4k7fgt6x24o" path="res://entities/estados/jogador/correndo.gd" id="5_correndo"]
+[ext_resource type="Script" uid="uid://ctnq1fdthc05k" path="res://entities/estados/jogador/machucado.gd" id="6_machucado"]
+[ext_resource type="Script" uid="uid://boym3vjnr7elb" path="res://entities/estados/jogador/morto.gd" id="7_morto"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1ctu"]
 size = Vector2(10, 14)
@@ -34,3 +36,9 @@ script = ExtResource("4_andando")
 
 [node name="Correndo" type="Node" parent="MaquinaEstados"]
 script = ExtResource("5_correndo")
+
+[node name="Machucado" type="Node" parent="MaquinaEstados"]
+script = ExtResource("6_machucado")
+
+[node name="Morto" type="Node" parent="MaquinaEstados"]
+script = ExtResource("7_morto")

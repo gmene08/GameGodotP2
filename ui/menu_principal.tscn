@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://dde6nyko3jl24"]
+
+[ext_resource type="Script" uid="uid://cliwkx7f1utfa" path="res://ui/menu_principal.gd" id="1_menu"]
+[ext_resource type="Theme" uid="uid://bdjdm5ohtoji" path="res://ui/tema.tres" id="2_tema"]
+[ext_resource type="SpriteFrames" uid="uid://cbhcinadyquyw" path="res://assets/sprites/minerador_animacoes.tres" id="3_minerador"]
+[ext_resource type="SpriteFrames" uid="uid://dyplq27gabuco" path="res://assets/sprites/morcego_pedra_animacoes.tres" id="4_morcego"]
+[ext_resource type="SpriteFrames" uid="uid://c67x60ucyvoiu" path="res://assets/sprites/cristal_animacoes.tres" id="5_cristal"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_titulo"]
+font_size = 32
+font_color = Color(0.93, 0.87, 1, 1)
+outline_size = 6
+outline_color = Color(0.1, 0.06, 0.14, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_subtitulo"]
+font_size = 12
+font_color = Color(0.72, 0.66, 0.84, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_controles"]
+font_size = 10
+font_color = Color(0.55, 0.5, 0.65, 1)
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_tema")
+script = ExtResource("1_menu")
+
+[node name="Fundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09, 0.07, 0.12, 1)
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 44.0
+offset_bottom = 84.0
+grow_horizontal = 2
+text = "Mina de Cristal"
+label_settings = SubResource("LabelSettings_titulo")
+horizontal_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 88.0
+offset_bottom = 105.0
+grow_horizontal = 2
+text = "Pegue os cristais e fuja dos morcegos de pedra."
+label_settings = SubResource("LabelSettings_subtitulo")
+horizontal_alignment = 1
+
+[node name="Botoes" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Jogar" type="Button" parent="Botoes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Jogar"
+
+[node name="Sair" type="Button" parent="Botoes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sair"
+
+[node name="Controles" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "WASD ou setas: andar    Shift: correr    Esc: pausar"
+label_settings = SubResource("LabelSettings_controles")
+horizontal_alignment = 1
+
+[node name="CristalEsquerda" type="AnimatedSprite2D" parent="."]
+position = Vector2(112, 64)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("5_cristal")
+animation = &"brilhar"
+autoplay = "brilhar"
+
+[node name="CristalDireita" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 64)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("5_cristal")
+animation = &"brilhar"
+autoplay = "brilhar"
+frame = 3
+
+[node name="Minerador" type="AnimatedSprite2D" parent="."]
+position = Vector2(168, 172)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_minerador")
+animation = &"parado_baixo"
+autoplay = "parado_baixo"
+
+[node name="Morcego" type="AnimatedSprite2D" parent="."]
+position = Vector2(344, 166)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("4_morcego")
+animation = &"voar"
+autoplay = "voar"

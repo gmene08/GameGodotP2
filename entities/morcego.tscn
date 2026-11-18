@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://qm3pivw1e7p5" path="res://entities/estados/morcego/saindo.gd" id="4_saindo"]
 [ext_resource type="Script" uid="uid://oik2adnlg4o0" path="res://entities/estados/morcego/vagando.gd" id="5_vagando"]
 [ext_resource type="Script" uid="uid://dfceidhgubghk" path="res://entities/estados/morcego/perseguindo.gd" id="6_perseguindo"]
+[ext_resource type="Script" uid="uid://cl56fhp3nvcw1" path="res://entities/estados/morcego/recuando.gd" id="7_recuando"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_corpo"]
 radius = 5.0
@@ -41,3 +42,6 @@ script = ExtResource("5_vagando")
 
 [node name="Perseguindo" type="Node" parent="MaquinaEstados"]
 script = ExtResource("6_perseguindo")
+
+[node name="Recuando" type="Node" parent="MaquinaEstados"]
+script = ExtResource("7_recuando")

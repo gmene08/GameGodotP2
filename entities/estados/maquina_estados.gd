@@ -2,7 +2,7 @@ class_name MaquinaEstados
 extends Node
 ## Máquina de estados genérica: os estados são os nós filhos (scripts que
 ## estendem Estado) e só o estado atual roda a cada frame de física.
-## Serve para o jogador e, depois, para os inimigos.
+## Serve para o jogador e para os inimigos.
 
 signal estado_mudou(anterior: Estado, novo: Estado)
 
@@ -18,7 +18,7 @@ func _ready() -> void:
 		var estado := filho as Estado
 		if estado:
 			_estados[estado.name] = estado
-			estado.transicao_pedida.connect(_trocar_para)
+			estado.transicao_pedida.connect(trocar_para)
 
 	# Os filhos ficam prontos antes do pai: espera o personagem terminar o
 	# _ready() para os estados já poderem usar as variáveis @onready dele.
@@ -32,7 +32,10 @@ func _physics_process(delta: float) -> void:
 	estado_atual.atualizar_fisica(delta)
 
 
-func _trocar_para(proximo: StringName) -> void:
+## Troca para o estado com esse nome. Os próprios estados pedem a troca
+## emitindo transicao_pedida; quem está fora da máquina (ex.: o Jogador ao
+## levar dano) chama este método direto.
+func trocar_para(proximo: StringName) -> void:
 	if not _estados.has(proximo):
 		push_error("Estado \"%s\" não existe em %s." % [proximo, get_path()])
 		return
