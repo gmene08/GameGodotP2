@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ber0thhcsp2l7"]
+
+[ext_resource type="Script" uid="uid://xulsolctwlmx" path="res://entities/morcego.gd" id="1_morcego"]
+[ext_resource type="SpriteFrames" uid="uid://dyplq27gabuco" path="res://assets/sprites/morcego_pedra_animacoes.tres" id="2_animacoes"]
+[ext_resource type="Script" uid="uid://bx4upwa5vhykl" path="res://entities/estados/maquina_estados.gd" id="3_maquina"]
+[ext_resource type="Script" uid="uid://qm3pivw1e7p5" path="res://entities/estados/morcego/saindo.gd" id="4_saindo"]
+[ext_resource type="Script" uid="uid://oik2adnlg4o0" path="res://entities/estados/morcego/vagando.gd" id="5_vagando"]
+[ext_resource type="Script" uid="uid://dfceidhgubghk" path="res://entities/estados/morcego/perseguindo.gd" id="6_perseguindo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_corpo"]
+radius = 5.0
+
+[node name="Morcego" type="CharacterBody2D" groups=["morcegos"]]
+z_index = 10
+collision_layer = 4
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_morcego")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_corpo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_animacoes")
+animation = &"voar"
+autoplay = "voar"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 6.0
+target_desired_distance = 8.0
+
+[node name="MaquinaEstados" type="Node" parent="." node_paths=PackedStringArray("estado_inicial")]
+script = ExtResource("3_maquina")
+estado_inicial = NodePath("Saindo")
+
+[node name="Saindo" type="Node" parent="MaquinaEstados"]
+script = ExtResource("4_saindo")
+
+[node name="Vagando" type="Node" parent="MaquinaEstados"]
+script = ExtResource("5_vagando")
+
+[node name="Perseguindo" type="Node" parent="MaquinaEstados"]
+script = ExtResource("6_perseguindo")

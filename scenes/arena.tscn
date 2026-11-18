@@ -4,8 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://cju6whhhchi2p" path="res://entities/player.tscn" id="1_wl4x5"]
 [ext_resource type="Script" uid="uid://dayqlhmgm1cb8" path="res://entities/gerador_cristais.gd" id="9_gerador"]
 [ext_resource type="PackedScene" uid="uid://dma55wrgwfpc0" path="res://ui/hud.tscn" id="9_hud"]
+[ext_resource type="Script" uid="uid://ddqsbcvuawpq0" path="res://entities/gerador_morcegos.gd" id="10_gerador_morcegos"]
+[ext_resource type="Script" uid="uid://dig7jibui61lj" path="res://scenes/navegacao_mapa.gd" id="11_navegacao"]
 
-[node name="Arena" type="Node2D" unique_id=2029993895]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mapa"]
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 512, 0, 512, 288, 0, 288)])
+parsed_geometry_type = 1
+source_geometry_mode = 1
+source_geometry_group_name = &"navegacao"
+agent_radius = 6.0
+
+[node name="Arena" type="Node2D" unique_id=2029993895 groups=["navegacao"]]
 
 [node name="CharacterBody2D" parent="." unique_id=270960006 instance=ExtResource("1_wl4x5")]
 z_index = 5
@@ -32,6 +41,10 @@ tile_set = ExtResource("1_t7r0c")
 [node name="Decoracao" type="TileMapLayer" parent="Tiles" unique_id=405373804]
 tile_map_data = PackedByteArray("AAADAAIAAAAAAAUAAAALAAIAAAAFAAUAAAAMAAIAAAAGAAUAAAAUAAIAAAAGAAUAAAAcAAIAAAAAAAUAAAACAAMAAAABAAUAAAAMAAMAAAADAAUAAAAdAAMAAAABAAUAAAATAAQAAAACAAUAAAAHAAgAAAABAAUAAAAaAAgAAAACAAUAAAAEAAoAAAADAAUAAAAPAAsAAAABAAUAAAAVAAsAAAADAAUAAAANAA0AAAAGAAUAAAANAA4AAAAFAAUAAAAYAA4AAAADAAUAAAAeAA4AAAABAAUAAAAFAA8AAAAEAAUAAAAdAA8AAAAAAAUAAAA=")
 tile_set = ExtResource("1_t7r0c")
+
+[node name="Navegacao" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_mapa")
+script = ExtResource("11_navegacao")
 
 [node name="PontosDeCristal" type="Node2D" parent="." unique_id=714597986]
 script = ExtResource("9_gerador")
@@ -112,6 +125,7 @@ position = Vector2(440, 248)
 position = Vector2(264, 216)
 
 [node name="SaidasMorcegos" type="Node2D" parent="." unique_id=892259980]
+script = ExtResource("10_gerador_morcegos")
 
 [node name="Tunel1" type="Marker2D" parent="SaidasMorcegos" unique_id=899252413]
 position = Vector2(160, 26)

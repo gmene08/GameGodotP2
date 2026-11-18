@@ -11,6 +11,7 @@
 size = Vector2(10, 14)
 
 [node name="Jogador" type="CharacterBody2D" unique_id=270960006 groups=["jogador"]]
+collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_jogador")
 
