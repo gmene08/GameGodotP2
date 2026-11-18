@@ -8,8 +8,8 @@ extends CharacterBody2D
 ## estados têm em comum.
 
 @export var velocidade_vagando := 30.0
-## Mais rápido que o jogador andando (70) e mais lento que correndo (130):
-## dá para fugir, mas só correndo.
+## Um pouco mais lento que o jogador andando (90): dá para fugir andando,
+## e correndo (160) com folga.
 @export var velocidade_perseguindo := 80.0
 ## Quanto a velocidade muda por segundo (px/s²). Mais baixo que o do jogador
 ## para o voo ficar mais solto, "derrapando" um pouco nas curvas.

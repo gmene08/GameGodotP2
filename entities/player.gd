@@ -16,8 +16,8 @@ const NOMES_DIRECAO: Dictionary[Vector2, String] = {
 	Vector2.RIGHT: "direita",
 }
 
-@export var velocidade_andando := 70.0
-@export var velocidade_correndo := 130.0
+@export var velocidade_andando := 90.0
+@export var velocidade_correndo := 160.0
 ## Quanto a velocidade muda por segundo ao acelerar ou frear (px/s²).
 ## Mais alto = mais responsivo; mais baixo = mais "escorregadio".
 @export var aceleracao := 1000.0
