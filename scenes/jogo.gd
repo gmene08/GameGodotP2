@@ -9,7 +9,6 @@ const MENU := "res://ui/menu_principal.tscn"
 const FASES: Array[Dictionary] = [
 	{"cena": "res://scenes/arena.tscn", "nome": "Arena da mina", "meta": 8},
 	{"cena": "res://scenes/mapa_mina.tscn", "nome": "Galerias da mina", "meta": 10},
-	{"cena": "res://scenes/mapa_caverna.tscn", "nome": "Caverna profunda", "meta": 12},
 ]
 
 ## Índice em FASES da fase em andamento.
