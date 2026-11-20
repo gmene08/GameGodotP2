@@ -1,3 +1,4 @@
+# Máquina de estados feita com ajuda de IA.
 class_name MaquinaEstados
 extends Node
 ## Máquina de estados genérica: os estados são os nós filhos (scripts que

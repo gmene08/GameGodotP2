@@ -19,6 +19,7 @@ func entrar() -> void:
 
 
 func atualizar_fisica(delta: float) -> void:
+	# Agro dos morcegos feito com ajuda de IA.
 	if morcego.distancia_do_jogador() <= morcego.raio_deteccao:
 		transicao_pedida.emit(&"Perseguindo")
 		return

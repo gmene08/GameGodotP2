@@ -1,3 +1,4 @@
+# Agro dos morcegos feito com ajuda de IA.
 extends Estado
 ## Percebeu o jogador: vai atrás dele pelo caminho da navegação, contornando as
 ## paredes e batendo as asas mais rápido. Ao encostar, machuca (se o jogador

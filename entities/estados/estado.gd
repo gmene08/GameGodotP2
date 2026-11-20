@@ -1,3 +1,4 @@
+# Máquina de estados feita com ajuda de IA.
 class_name Estado
 extends Node
 ## Classe base dos estados. Cada estado é um nó filho de uma MaquinaEstados
